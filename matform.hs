@@ -10,9 +10,10 @@
     6 4 1 6   ->   {{1,2,3,4},{6,4,1,6},{2,8,0,9}}
     2 8 0 9
 
-    Plus the result is spit directly into the Clipboard!
+    Plus the result is spat directly into the Clipboard!
 -}
 
+-- For cross-platform acces to the system clipboard.
 import System.Hclip
 
 -- If a character is a space, we return a comma. Otherwise we return
@@ -25,8 +26,8 @@ commify other = other
 replaceSpaces :: String -> String
 replaceSpaces s = map commify s
 
--- Takes a sequence the user entered, and formats it as follows:
--- "{a,b,c,d,e,f,g..}"
+-- Takes a sequence String "a b c d e ..." and formats it as follows:
+-- "{a,b,c,d,e,...}"
 constructBracketedSet :: String -> String
 constructBracketedSet s = "{" ++ replaceSpaces s ++ "}"
 
