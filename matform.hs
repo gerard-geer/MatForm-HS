@@ -42,7 +42,6 @@ formatMatrix lst =
 -- Gets multiple lines of input from the user.
 getLines :: Int -> IO [String]
 getLines row = do
-    putStr ("row " ++ (show row) ++ ": ")
     line <- getLine
     if null line then return []
     else do
